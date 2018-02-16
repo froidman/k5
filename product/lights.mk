@@ -1,4 +1,4 @@
 # Lights
-PRODUCT_PACKAGES += \
-    lights.msm8916
+#PRODUCT_PACKAGES += \
+#    lights.msm8916
 
