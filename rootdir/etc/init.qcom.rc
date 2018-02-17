@@ -158,49 +158,58 @@ on boot
     chown radio radio /data/misc/radio/copy_complete
     chmod 0660 /data/misc/radio/copy_complete
 
-    # Display
-    chown system graphics /sys/class/graphics/fb0/dyn_pu
-    chmod 0664 /sys/class/graphics/fb0/dyn_pu
-    chown system graphics /sys/class/graphics/fb0/dynamic_fps
-    chmod 0664 /sys/class/graphics/fb0/dynamic_fps
+    # Graphics
     chown system graphics /sys/class/graphics/fb0/idle_time
     chmod 0664 /sys/class/graphics/fb0/idle_time
-
-    chown system graphics /sys/class/graphics/fb0/dyn_pu
     chown system graphics /sys/class/graphics/fb0/dynamic_fps
-    chown system graphics /sys/class/graphics/fb0/idle_time
-    chown system graphics /sys/class/graphics/fb0/mode
+    chmod 0664 /sys/class/graphics/fb0/dynamic_fps
+    chown system graphics /sys/class/graphics/fb0/dyn_pu
+    chmod 0664 /sys/class/graphics/fb0/dyn_pu
     chown system graphics /sys/class/graphics/fb0/modes
+    chmod 0664 /sys/class/graphics/fb0/modes
+    chown system graphics /sys/class/graphics/fb0/mode
+    chmod 0664 /sys/class/graphics/fb0/mode
+    chown system graphics /sys/class/graphics/fb0/msm_cmd_autorefresh_en
+    chmod 0664 /sys/class/graphics/fb0/msm_cmd_autorefresh_en
+
+    # LED permissions
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/red/on_off_ms
+    chown system system /sys/class/leds/red/rgb_start
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/green/on_off_ms
+    chmod 664 /sys/class/leds/red/brightness
+    chmod 664 /sys/class/leds/green/brightness
+    chmod 664 /sys/class/leds/red/blink
+    chmod 664 /sys/class/leds/green/blink
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/green/blink
+
 
     # Change ownership and permission for backlight
     chown system system /sys/class/backlight/lcd-backlight:0/brightness
-    chmod 0664 /sys/class/backlight/lcd-backlight:0/brightness
+    chmod 664 /sys/class/backlight/lcd-backlight:0/brightness
     chown system system /sys/class/backlight/lcd-backlight:0/max_brightness
-    chmod 0664 /sys/class/backlight/lcd-backlight:0/max_brightness
-    chmod 0664 /sys/class/leds/lcd-backlight/brightness
-    chown system system /sys/class/leds/green/blink
-    chmod 0664 /sys/class/leds/green/blink
+    chmod 664 /sys/class/backlight/lcd-backlight:0/max_brightness
+    chmod 664 /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/green/delay_on
-    chmod 0664 /sys/class/leds/green/delay_on
+    chmod 664 /sys/class/leds/green/delay_on
     chown system system /sys/class/leds/green/delay_off
-    chmod 0664 /sys/class/leds/green/delay_off
-
-    chown system system /sys/class/leds/red/blink
-    chmod 0664 /sys/class/leds/red/blink
+    chmod 664 /sys/class/leds/green/delay_off
     chown system system /sys/class/leds/red/delay_on
-    chmod 0664 /sys/class/leds/red/delay_on
+    chmod 664 /sys/class/leds/red/delay_on
     chown system system /sys/class/leds/red/delay_off
-    chmod 0664 /sys/class/leds/red/delay_off
+    chmod 664 /sys/class/leds/red/delay_off
 
     # Change the ownership of the notification LED interface
     chown system system /sys/class/leds/rgb/control
-    chmod 0664 /sys/class/leds/rgb/control
+    chmod 664 /sys/class/leds/rgb/control
 
     # Change the ownership of the charging LED interface
     chown system system /sys/class/leds/charging/brightness
-    chmod 0664 /sys/class/leds/charging/brightness
+    chmod 664 /sys/class/leds/charging/brightness
     chown system system /sys/class/leds/charging/trigger
-    chmod 0664 /sys/class/leds/charging/trigger
+chmod 664 /sys/class/leds/charging/trigger
 
 on fs
     mount_all fstab.qcom
