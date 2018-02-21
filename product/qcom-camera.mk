@@ -4,6 +4,8 @@ PRODUCT_PACKAGES += \
     libshim_gui \
     libshim_atomic \
     Snap \
+    libmm-qcamera \
+
 #   libboringssl-compat \
 
 #    libboringssl-compat \
