@@ -7,7 +7,6 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audiod \
     audio.primary.msm8916 \
     audio.r_submix.default \
     audio.usb.default \
