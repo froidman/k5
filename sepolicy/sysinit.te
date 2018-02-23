@@ -1,3 +1,1 @@
-allow sysinit proc:file write;
-allow sysinit storage_file:dir getattr;
-allow sysinit system_data_file:dir write;
+allow sysinit rootfs:lnk_file { getattr };

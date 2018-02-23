@@ -1,6 +1,14 @@
-allow mm-qcamerad mpctl_socket:sock_file write;
-allow mm-qcamerad system_data_file:dir { write add_name };
-allow mm-qcamerad system_data_file:sock_file write;
+type diag_prop, property_type;
 
-# Nick Kralevich <nnk@google.com> : Allow loading files with text relocations from /system
-allow mm-qcamerad system_file:file execmod;
+allow mm-qcamerad camera_prop:property_service set;
+allow mm-qcamerad permission_service:service_manager find;
+allow mm-qcamerad mpctl_socket:sock_file write;
+get_prop(mm-qcamerad, diag_prop);
+allow mm-qcamerad camera_data_file:file create_file_perms;
+allow mm-qcamerad persist_file:file r_file_perms;
+allow mm-qcamerad system_data_file:dir w_dir_perms;
+allow mm-qcamerad system_data_file:file open;
+allow mm-qcamerad { untrusted_app untrusted_app_25 }:fd use;
+allow mm-qcamerad camera_data_file:sock_file { create unlink };
+set_prop(mm-qcamerad, debug_prop)
+

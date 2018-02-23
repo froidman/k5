@@ -1,2 +1,8 @@
-allow tee system_prop:property_service set;
-allow tee vfat:file { read getattr open };
+allow tee persist_data_file:file { write };
+
+allow tee firmware_data_file:dir r_dir_perms;
+allow tee firmware_data_file:file r_file_perms;
+
+allow tee persist_lg_data_file:dir r_dir_perms;
+allow tee persist_lg_data_file:file rw_file_perms;
+
