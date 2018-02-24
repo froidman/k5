@@ -321,11 +321,11 @@
    </string-array>
 
 	<!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors -->
-    <!--<bool name="config_multiColorBatteryLed">true</bool>-->
+    <bool name="config_multiColorBatteryLed">true</bool>
 
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
-    <!--<bool name="config_setColorTransformAccelerated">true</bool>-->
+    <bool name="config_setColorTransformAccelerated">true</bool>
 
     <!-- Default LED off time for notification LED in milliseconds. -->
     <integer name="config_defaultNotificationLedOff">0</integer>
